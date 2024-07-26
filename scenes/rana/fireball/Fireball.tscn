@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://07wasqgbrur6"]
+
+[ext_resource type="Script" path="res://scenes/rana/fireball/fireball.gd" id="1_l7icb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc8e8"]
+radius = 26.0768
+
+[node name="Fireball" type="Area2D"]
+position = Vector2(61, -2)
+script = ExtResource("1_l7icb")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jc8e8")
+metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

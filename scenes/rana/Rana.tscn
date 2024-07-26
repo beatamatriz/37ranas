@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://caumaa3fbgi40"]
+
+[ext_resource type="Script" path="res://scenes/rana/rana.gd" id="1_f4e0d"]
+[ext_resource type="Texture2D" uid="uid://cgoi3kaeg10vv" path="res://assets/placeholders/ranatipa.png" id="2_st4qd"]
+[ext_resource type="Script" path="res://scenes/rana/fireball/fireball.gd" id="3_p0k4k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_trn31"]
+radius = 34.0
+height = 160.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc8e8"]
+radius = 26.0768
+
+[node name="Rana" type="CharacterBody2D"]
+script = ExtResource("1_f4e0d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.388128, 0.388128)
+texture = ExtResource("2_st4qd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_trn31")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Fireball" type="Area2D" parent="."]
+position = Vector2(61, -2)
+script = ExtResource("3_p0k4k")
+
+[node name="HitBox" type="CollisionShape2D" parent="Fireball"]
+shape = SubResource("CircleShape2D_jc8e8")
+metadata/_edit_lock_ = true
