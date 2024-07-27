@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://tug0nlr5rj5s"]
+[gd_scene load_steps=8 format=3 uid="uid://tug0nlr5rj5s"]
 
 [ext_resource type="Texture2D" uid="uid://bltkgeeyybsla" path="res://assets/tiles/tileset_221_again_otra_unavezmasbrolaultima_(se me olvido quitar el fondo).png" id="1_kgejt"]
 [ext_resource type="Texture2D" uid="uid://dhgcg1oaltrfy" path="res://assets/placeholders/image.png" id="1_yv1sd"]
 [ext_resource type="PackedScene" uid="uid://caumaa3fbgi40" path="res://scenes/rana/Rana.tscn" id="2_21ayo"]
 [ext_resource type="PackedScene" uid="uid://y5l5epgitxnp" path="res://scenes/box/Box.tscn" id="3_2w1y7"]
+[ext_resource type="PackedScene" uid="uid://bmhnd6y4ociv4" path="res://scenes/anvil/anvil.tscn" id="5_58sch"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3yhx2"]
 texture = ExtResource("1_kgejt")
@@ -85,12 +86,12 @@ sources/9 = SubResource("TileSetAtlasSource_3yhx2")
 [node name="Building2" type="Node2D"]
 
 [node name="boceto" type="Sprite2D" parent="."]
-position = Vector2(5114, -2285)
-scale = Vector2(14.5478, 10.2957)
+position = Vector2(14766, -3113)
+scale = Vector2(7.42559, 10.2957)
 texture = ExtResource("1_yv1sd")
 
 [node name="Rana" parent="." instance=ExtResource("2_21ayo")]
-position = Vector2(2542, -2019)
+position = Vector2(7823, -5783)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 0)
@@ -103,3 +104,7 @@ position = Vector2(6521, -1986)
 
 [node name="Box2" parent="." instance=ExtResource("3_2w1y7")]
 position = Vector2(7651, 654)
+
+[node name="Anvil" parent="." instance=ExtResource("5_58sch")]
+position = Vector2(7774, -8521)
+end_pos = Vector2(7774, -5659)

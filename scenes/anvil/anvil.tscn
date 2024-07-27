@@ -1,20 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmhnd6y4ociv4"]
 
 [ext_resource type="Script" path="res://scenes/anvil/anvil.gd" id="1_jk2fa"]
-[ext_resource type="Texture2D" uid="uid://dic0y84oda1yv" path="res://assets/placeholders/anvil.jpg" id="2_6e3fp"]
-
+[ext_resource type="Texture2D" uid="uid://b3lebhptx82f2" path="res://assets/sprites/yunque.png" id="2_0mibm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2vla"]
-size = Vector2(601, 287)
+size = Vector2(346, 87)
 
-[node name="Anvil" type="StaticBody2D"]
+[node name="Anvil" type="Area2D"]
 script = ExtResource("1_jk2fa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_6e3fp")
-metadata/_edit_lock_ = true
+position = Vector2(2, -33)
+scale = Vector2(1.028, 1.028)
+texture = ExtResource("2_0mibm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -0.5)
+position = Vector2(14, 99.5)
 shape = SubResource("RectangleShape2D_i2vla")
-metadata/_edit_lock_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

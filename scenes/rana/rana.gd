@@ -31,7 +31,8 @@ func fireball():
 	$AnimationTree["parameters/conditions/is_burning"] = true
 	$Fireball.burn()
 
-func squashed():
+func squash():
+	$Sprite2D.scale.y = 0.05
 	$CollisionNormal.set_disabled(true)
 	$CollisionSquashed.set_disabled(false)
 
@@ -78,8 +79,9 @@ func _physics_process(delta):
 		velocity.y = max(0, velocity.y)
 	
 	#state 3
-	if state >= 3 and Input.is_key_pressed(KEY_Z):
-		squashed()
+	if state == 3 and Input.is_key_pressed(KEY_0):
+		squash()
+		state += 1
 	if not is_wall_sliding():
 		if direction:
 			velocity.x = direction * speed
