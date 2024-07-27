@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbcxkkm3slhfq"]
+
+[ext_resource type="Script" path="res://scenes/rana/fireball/fireball.gd" id="1_oc3jj"]
+[ext_resource type="Script" path="res://scenes/rana/fireball/timer/timer.gd" id="2_upeki"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jc8e8"]
+radius = 26.0768
+
+[node name="Fireball" type="Area2D"]
+position = Vector2(61, -2)
+script = ExtResource("1_oc3jj")
+
+[node name="HitBox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jc8e8")
+metadata/_edit_lock_ = true
+
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource("2_upeki")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

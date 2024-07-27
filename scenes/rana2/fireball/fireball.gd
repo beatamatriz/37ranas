@@ -19,5 +19,4 @@ func _on_body_entered(body):
 
 func _on_timer_timeout():
 	$HitBox.set_disabled(true)
-	self.get_parent().cooldown = false
 	$Timer.stop()
