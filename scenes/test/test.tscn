@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://p7qtsiiyhal4"]
 
 [ext_resource type="Texture2D" uid="uid://bltkgeeyybsla" path="res://assets/tiles/tileset_221_again_otra_unavezmasbrolaultima_(se me olvido quitar el fondo).png" id="1_ufrgf"]
-[ext_resource type="PackedScene" uid="uid://y5l5epgitxnp" path="res://scenes/box/Box.tscn" id="2_aai04"]
+[ext_resource type="PackedScene" uid="uid://y5l5epgitxnp" path="res://scenes/objects/box/Box.tscn" id="2_aai04"]
 [ext_resource type="PackedScene" uid="uid://caumaa3fbgi40" path="res://scenes/rana/Rana.tscn" id="3_exf50"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3yhx2"]

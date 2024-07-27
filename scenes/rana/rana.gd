@@ -26,8 +26,9 @@ func update_animation():
 			$AnimationTree["parameters/conditions/is_idle"] = false
 	if velocity.y == 0 and is_on_floor():
 		$AnimationTree["parameters/conditions/is_jumping"] = false
-		$AnimationTree["parameters/conditions/is_landing"] = true
+		$AnimationTree["parameters/conditions/is_landing"] = true 
 func fireball():
+	$AnimationTree["parameters/conditions/is_burned"] = true
 	$AnimationTree["parameters/conditions/is_burning"] = true
 	$Fireball.burn()
 

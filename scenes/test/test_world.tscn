@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://caumaa3fbgi40" path="res://scenes/rana/Rana.tscn" id="1_0xavl"]
 [ext_resource type="Texture2D" uid="uid://j7kjdxwehba3" path="res://assets/placeholders/bloque.png" id="2_7r5kf"]
-[ext_resource type="PackedScene" uid="uid://y5l5epgitxnp" path="res://scenes/box/Box.tscn" id="3_o1j2x"]
+[ext_resource type="PackedScene" uid="uid://y5l5epgitxnp" path="res://scenes/objects/box/Box.tscn" id="3_o1j2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lfqj"]
 size = Vector2(218, 45)

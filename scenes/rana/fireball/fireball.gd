@@ -13,7 +13,7 @@ func _process(delta):
 	pass
 
 func _on_body_entered(body):
-	if body.name == "Box":
+	if body.name == "Box" or body.name == "Box2":
 		body.burn()
 
 

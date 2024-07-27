@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjgtggdgmjljm"]
+
+[ext_resource type="Script" path="res://scenes/objects/elevator/elevator.gd" id="1_78hoq"]
+[ext_resource type="Texture2D" uid="uid://gtowcf6iexh8" path="res://assets/placeholders/asenso.png" id="2_4cs6v"]
+
+[node name="Elevator" type="CharacterBody2D"]
+script = ExtResource("1_78hoq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4cs6v")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(69, 4)
+polygon = PackedVector2Array(167, -297, -284, -297, -284, 237, 64, 237, 64, 179, -227, 178, -227, -250, 167, -250)
