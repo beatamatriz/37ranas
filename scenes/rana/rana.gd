@@ -23,19 +23,31 @@ func squashed():
 
 func is_direction_flipped(new_direction):
 	return current_direction * new_direction < 0
+	
+func is_wall_sliding():
+	if !is_on_wall_only():
+		return false
+	return Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")
 
 func _physics_process(delta):
-	if not is_on_floor():
+	var direction = Input.get_axis("ui_left", "ui_right")
+	if is_wall_sliding():
+		velocity.y += 0.02 * gravity * delta
+		velocity.y = max(0, velocity.y)
+	elif not is_on_floor():
 		velocity.y += gravity * delta
-		
-	if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+
+	if Input.is_action_just_pressed("ui_accept"):
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		elif is_wall_sliding():
+			velocity.y = JUMP_VELOCITY
+			velocity.x = -1200 * direction
 	# State 1
 	if Input.is_key_pressed(KEY_X):
 		fireball()
 	if Input.is_key_pressed(KEY_Z):
 		squashed()
-	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
 		if is_direction_flipped(velocity.x) or (current_direction == 0 and velocity.x < 0):
