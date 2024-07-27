@@ -52,5 +52,3 @@ zoom = Vector2(0.33, 0.33)
 
 [node name="Fireball" parent="." instance=ExtResource("3_7l33d")]
 position = Vector2(60, 9)
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
