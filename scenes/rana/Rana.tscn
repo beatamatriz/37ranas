@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://caumaa3fbgi40"]
 
 [ext_resource type="Script" path="res://scenes/rana/rana.gd" id="1_f4e0d"]
-[ext_resource type="Texture2D" uid="uid://cgoi3kaeg10vv" path="res://assets/placeholders/ranatipa.png" id="2_st4qd"]
+[ext_resource type="Texture2D" uid="uid://bfjxsxa8nq5fk" path="res://assets/sprites/CaminadoZombie.png" id="2_mfbfa"]
 [ext_resource type="PackedScene" uid="uid://07wasqgbrur6" path="res://scenes/rana/fireball/Fireball.tscn" id="3_7l33d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_trn31"]
@@ -30,7 +30,9 @@ script = ExtResource("1_f4e0d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.388128, 0.388128)
-texture = ExtResource("2_st4qd")
+texture = ExtResource("2_mfbfa")
+hframes = 10
+frame = 5
 
 [node name="CollisionNormal" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_trn31")
@@ -50,3 +52,5 @@ zoom = Vector2(0.33, 0.33)
 
 [node name="Fireball" parent="." instance=ExtResource("3_7l33d")]
 position = Vector2(60, 9)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
