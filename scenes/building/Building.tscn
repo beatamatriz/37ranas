@@ -82,7 +82,7 @@ tile_size = Vector2i(221, 221)
 physics_layer_0/collision_layer = 1
 sources/9 = SubResource("TileSetAtlasSource_3yhx2")
 
-[node name="Building" type="Node2D"]
+[node name="Building2" type="Node2D"]
 
 [node name="boceto" type="Sprite2D" parent="."]
 position = Vector2(5114, -2285)
