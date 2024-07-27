@@ -7,11 +7,16 @@ func _ready():
 
 func burn():
 	$HitBox.set_disabled(false)
+	$Timer.start()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
-
 func _on_body_entered(body):
-	body.burn()
-	pass # Replace with function body.
+	if body.name == "Box":
+		body.burn()
+
+
+func _on_timer_timeout():
+	$HitBox.set_disabled(true)
+	$Timer.stop()

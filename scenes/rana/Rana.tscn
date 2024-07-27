@@ -1,34 +1,52 @@
-[gd_scene load_steps=6 format=3 uid="uid://caumaa3fbgi40"]
+[gd_scene load_steps=9 format=3 uid="uid://caumaa3fbgi40"]
 
 [ext_resource type="Script" path="res://scenes/rana/rana.gd" id="1_f4e0d"]
 [ext_resource type="Texture2D" uid="uid://cgoi3kaeg10vv" path="res://assets/placeholders/ranatipa.png" id="2_st4qd"]
-[ext_resource type="Script" path="res://scenes/rana/fireball/fireball.gd" id="3_p0k4k"]
+[ext_resource type="PackedScene" uid="uid://07wasqgbrur6" path="res://scenes/rana/fireball/Fireball.tscn" id="3_7l33d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_trn31"]
 radius = 34.0
 height = 160.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jc8e8"]
-radius = 26.0768
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pwwkg"]
+radius = 11.0
+height = 68.0
+
+[sub_resource type="Animation" id="Animation_pmvqe"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_p6pjg"]
+resource_name = "Run"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vbsen"]
+_data = {
+"Idle": SubResource("Animation_pmvqe"),
+"Run": SubResource("Animation_p6pjg")
+}
 
 [node name="Rana" type="CharacterBody2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_f4e0d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.388128, 0.388128)
 texture = ExtResource("2_st4qd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionNormal" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_trn31")
 
+[node name="CollisionSquashed" type="CollisionShape2D" parent="."]
+position = Vector2(-2.4869e-14, 69)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_pwwkg")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vbsen")
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.33, 0.33)
 
-[node name="Fireball" type="Area2D" parent="."]
-position = Vector2(61, -2)
-script = ExtResource("3_p0k4k")
-
-[node name="HitBox" type="CollisionShape2D" parent="Fireball"]
-shape = SubResource("CircleShape2D_jc8e8")
-metadata/_edit_lock_ = true
+[node name="Fireball" parent="." instance=ExtResource("3_7l33d")]
+position = Vector2(60, 9)
