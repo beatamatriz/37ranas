@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckit4l2tm6hm8"]
+
+[ext_resource type="PackedScene" uid="uid://caumaa3fbgi40" path="res://scenes/rana/Rana.tscn" id="1_0xavl"]
+[ext_resource type="Texture2D" uid="uid://j7kjdxwehba3" path="res://assets/placeholders/bloque.png" id="2_7r5kf"]
+[ext_resource type="PackedScene" uid="uid://y5l5epgitxnp" path="res://scenes/box/Box.tscn" id="3_o1j2x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lfqj"]
+size = Vector2(218, 45)
+
+[node name="test_world" type="Node2D"]
+
+[node name="7rana" parent="." instance=ExtResource("1_0xavl")]
+position = Vector2(1, 142)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(60, 250)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(1.00001, -1.5)
+scale = Vector2(8.38461, 2.8125)
+texture = ExtResource("2_7r5kf")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_6lfqj")
+metadata/_edit_lock_ = true
+
+[node name="Box" parent="." instance=ExtResource("3_o1j2x")]
+position = Vector2(122, 140)
