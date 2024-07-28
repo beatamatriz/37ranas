@@ -16,6 +16,7 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "Box" or body.name == "Box2":
 		body.burn()
+		$FireSound.play()
 
 
 func _on_timer_timeout():

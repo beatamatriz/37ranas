@@ -22,5 +22,5 @@ func _on_body_entered(body):
 		$Timer.start()
 
 func _on_timer_timeout():
-	$AudioStreamPlayer2D.play()
+	$VigasCayendo.play()
 	rana.joist_fall = true

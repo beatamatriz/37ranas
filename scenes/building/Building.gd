@@ -9,8 +9,7 @@ func handle_ending():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AudioStreamPlayer2D.play()
-
+	pass
 func _process(delta):
 	pass
 
@@ -24,5 +23,6 @@ func _on_ending_timer_timeout():
 		get_tree().quit()
 
 
-func _on_audio_stream_player_2d_finished():
-	$AudioStreamPlayer2D.play()
+
+func _on_main_song_finished():
+	$MainSong.play()

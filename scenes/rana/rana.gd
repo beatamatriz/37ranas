@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var friction : float = 115
 @export var acc : float = 90
 
-const god = true
+const god = false
 
 var joist_fall = false
 var canmove = true
@@ -127,6 +127,7 @@ func squash():
 func _ready():
 	$Fire_Sprite.visible = false
 	$CollisionSquashed.set_disabled(true)
+	$MainSong.play()
 
 func _physics_process(delta):
 	if not is_on_floor():

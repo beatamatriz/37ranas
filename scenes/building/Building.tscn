@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://tug0nlr5rj5s"]
+[gd_scene load_steps=37 format=3 uid="uid://tug0nlr5rj5s"]
 
 [ext_resource type="PackedScene" uid="uid://p427yv5sbljs" path="res://scenes/objects/boiler/Boiler.tscn" id="1_87sx3"]
 [ext_resource type="Texture2D" uid="uid://cpd1fqadosfps" path="res://assets/backgrounds/fondo dentro.png" id="1_gbiwl"]
@@ -24,14 +24,13 @@
 [ext_resource type="Texture2D" uid="uid://23m71gmtaixc" path="res://assets/stickers/tubos2.png" id="14_tqqsw"]
 [ext_resource type="Texture2D" uid="uid://dlkg0hqqdhs57" path="res://assets/stickers/fuera zombies.png" id="15_1540m"]
 [ext_resource type="Texture2D" uid="uid://chpn7drfx6p7o" path="res://assets/splashart/prebeso.png" id="15_fn7go"]
-[ext_resource type="AudioStream" uid="uid://dr0uf85oocdfr" path="res://assets/sounds/Sonido Viga o yunque.wav" id="16_hr7ba"]
 [ext_resource type="Texture2D" uid="uid://djwvney3dblil" path="res://assets/splashart/beso.png" id="16_s3kn2"]
 [ext_resource type="Texture2D" uid="uid://viun3r2h3fn3" path="res://assets/stickers/tubos.png" id="16_yo1c7"]
 [ext_resource type="Texture2D" uid="uid://dp21tc7u0b4qq" path="res://assets/stickers/zona de tress.png" id="17_3tf86"]
 [ext_resource type="PackedScene" uid="uid://d242lxecjsj77" path="res://scenes/objects/fence/Fence.tscn" id="18_w4oeg"]
+[ext_resource type="AudioStream" uid="uid://bqjveg35yv61h" path="res://assets/sounds/vigas.mp3" id="19_wvhdx"]
 [ext_resource type="Texture2D" uid="uid://dwuow5rdena02" path="res://assets/stickers/nube1.png" id="29_24w0d"]
 [ext_resource type="Texture2D" uid="uid://ch3q4m8ujy8s6" path="res://assets/stickers/nube2.png" id="30_qr7e5"]
-[ext_resource type="AudioStream" uid="uid://bc3xl2jcetxfx" path="res://assets/sounds/Canción de fondo.wav" id="32_4k4ug"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jltvu"]
 texture = ExtResource("7_73elb")
@@ -160,6 +159,11 @@ position = Vector2(6329, -1945)
 [node name="Box2" parent="." instance=ExtResource("3_2w1y7")]
 position = Vector2(6124, 44)
 
+[node name="Tubos2" type="Sprite2D" parent="Box2"]
+position = Vector2(-671.667, -9.44444)
+scale = Vector2(0.217592, 0.217592)
+texture = ExtResource("14_tqqsw")
+
 [node name="StickersBG" type="Node2D" parent="."]
 
 [node name="Flecha3" type="Sprite2D" parent="StickersBG"]
@@ -259,11 +263,6 @@ position = Vector2(7603, -3650)
 rotation = 0.120428
 script = ExtResource("11_46w87")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="JoistManager/JoistManager"]
-position = Vector2(687.481, 3550.12)
-rotation = -0.120428
-stream = ExtResource("16_hr7ba")
-
 [node name="Tutorial2" type="Sprite2D" parent="JoistManager/JoistManager"]
 position = Vector2(-87.288, 2549.96)
 rotation = -0.120428
@@ -299,6 +298,11 @@ rotation = -0.359538
 wait_time = 0.3
 one_shot = true
 
+[node name="VigasCayendo" type="AudioStreamPlayer2D" parent="JoistManager/JoistManager"]
+stream = ExtResource("19_wvhdx")
+pitch_scale = 0.89
+attenuation = 0.420448
+
 [node name="Fence" parent="." instance=ExtResource("18_w4oeg")]
 position = Vector2(9618, -5622)
 
@@ -324,11 +328,6 @@ texture = ExtResource("13_mcsle")
 position = Vector2(2270.08, 1475)
 rotation = 3.14159
 scale = Vector2(2.50058, -2.50058)
-texture = ExtResource("14_tqqsw")
-
-[node name="Tubos2" type="Sprite2D" parent="Stickers"]
-position = Vector2(78.9999, -41)
-scale = Vector2(1.95833, 1.95833)
 texture = ExtResource("14_tqqsw")
 
 [node name="FueraZombies" type="Sprite2D" parent="Stickers"]
@@ -600,7 +599,7 @@ shape = SubResource("RectangleShape2D_kueqo")
 position = Vector2(6917, -7078)
 
 [node name="Rana" parent="." instance=ExtResource("2_21ayo")]
-position = Vector2(8616, -3317)
+position = Vector2(290, -2075)
 speed = 950.0
 pushback = 1111.0
 jump_velocity = -1900.0
@@ -634,11 +633,7 @@ texture = ExtResource("16_s3kn2")
 [node name="EndingTimer" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("32_4k4ug")
-
 [connection signal="body_entered" from="JoistManager/JoistManager" to="JoistManager/JoistManager" method="_on_body_entered"]
 [connection signal="timeout" from="JoistManager/JoistManager/Timer" to="JoistManager/JoistManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="Rana/damn/Inicio/Timer" to="Rana/damn/Inicio" method="_on_timer_timeout"]
 [connection signal="timeout" from="EndingTimer" to="." method="_on_ending_timer_timeout"]
-[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

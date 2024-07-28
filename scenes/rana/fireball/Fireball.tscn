@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://07wasqgbrur6"]
+[gd_scene load_steps=5 format=3 uid="uid://07wasqgbrur6"]
 
 [ext_resource type="Script" path="res://scenes/rana/fireball/fireball.gd" id="1_l7icb"]
 [ext_resource type="Script" path="res://scenes/rana/fireball/timer/timer.gd" id="2_j8py2"]
+[ext_resource type="AudioStream" uid="uid://cjf6t5f2vr85r" path="res://assets/sounds/Fuego.wav" id="3_esujk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ua22c"]
 radius = 13.0
@@ -18,6 +19,12 @@ metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
 script = ExtResource("2_j8py2")
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_esujk")
+volume_db = -8.368
+pitch_scale = 1.54
+attenuation = 2.63902
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

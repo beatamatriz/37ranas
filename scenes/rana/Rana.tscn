@@ -1,9 +1,10 @@
-[gd_scene load_steps=127 format=3 uid="uid://caumaa3fbgi40"]
+[gd_scene load_steps=128 format=3 uid="uid://caumaa3fbgi40"]
 
 [ext_resource type="Script" path="res://scenes/rana/rana.gd" id="1_f4e0d"]
 [ext_resource type="Texture2D" uid="uid://d1nh68g6becg6" path="res://assets/sprites/Rana.png" id="2_a4i68"]
 [ext_resource type="PackedScene" uid="uid://07wasqgbrur6" path="res://scenes/rana/fireball/Fireball.tscn" id="3_7l33d"]
 [ext_resource type="Texture2D" uid="uid://dp5xenl2hlfao" path="res://assets/sprites/Llamarada.png" id="3_m0l6v"]
+[ext_resource type="AudioStream" uid="uid://bc3xl2jcetxfx" path="res://assets/sounds/Canción de fondo.wav" id="5_0mk6d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_avfc4"]
 radius = 32.6667
@@ -1009,5 +1010,8 @@ parameters/conditions/is_disabled = false
 
 [node name="AnvilTimer" type="Timer" parent="."]
 wait_time = 4.0
+
+[node name="MainSong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_0mk6d")
 
 [connection signal="timeout" from="AnvilTimer" to="." method="_on_anvil_timer_timeout"]
