@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="37ranas"
+config/name="Apocalipsis T4T"
+config/version="0.0.0"
 run/main_scene="res://scenes/building/Building.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/image="res://assets/splashart/Portada.png"

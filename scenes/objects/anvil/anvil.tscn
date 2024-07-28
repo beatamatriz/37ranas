@@ -7,7 +7,7 @@
 size = Vector2(346, 87)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n213w"]
-size = Vector2(176, 1847)
+size = Vector2(95, 1847)
 
 [node name="Anvil" type="Area2D"]
 script = ExtResource("1_jk2fa")
@@ -25,11 +25,11 @@ shape = SubResource("RectangleShape2D_i2vla")
 position = Vector2(8, 552)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-60, 466.5)
+position = Vector2(123.5, 438)
 shape = SubResource("RectangleShape2D_n213w")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.5
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

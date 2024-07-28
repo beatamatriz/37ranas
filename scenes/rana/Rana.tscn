@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=3 uid="uid://caumaa3fbgi40"]
+[gd_scene load_steps=127 format=3 uid="uid://caumaa3fbgi40"]
 
 [ext_resource type="Script" path="res://scenes/rana/rana.gd" id="1_f4e0d"]
 [ext_resource type="Texture2D" uid="uid://d1nh68g6becg6" path="res://assets/sprites/Rana.png" id="2_a4i68"]
@@ -12,325 +12,6 @@ height = 188.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tpb6d"]
 radius = 12.3333
 height = 99.3333
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iwwga"]
-animation = &"Burn"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yt8x0"]
-animation = &"Burned_Cis"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o1avd"]
-animation = &"Burned_Fall"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1fnqc"]
-animation = &"Burned_Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlvk7"]
-animation = &"Burned_Jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t785b"]
-animation = &"Burned_Land"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f2r6o"]
-animation = &"Burned_Run"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a7lxy"]
-animation = &"Burned_Trans"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p8txu"]
-animation = &"Cis"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ggmrw"]
-animation = &"Fall"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_75xx3"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_45u1a"]
-animation = &"Jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ub3my"]
-animation = &"Land"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oickt"]
-animation = &"Run"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pfg18"]
-animation = &"Squashed_Fall"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yqfuv"]
-animation = &"Squashed_Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lbig4"]
-animation = &"Squashed_Jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_61g14"]
-animation = &"Squashed_Run"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_it2rt"]
-animation = &"Tibia_Cis"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tddnl"]
-animation = &"Tibia_Fall"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l2gom"]
-animation = &"Tibia_Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wh5m6"]
-animation = &"Tibia_Jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_afmd1"]
-animation = &"Tibia_Land"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p5y50"]
-animation = &"Tibia_Run"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7mcou"]
-animation = &"Tibia_Trans"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xj35d"]
-animation = &"Trans"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mk10i"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jes1g"]
-advance_mode = 2
-advance_condition = &"is_running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ycvw"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kenib"]
-advance_mode = 2
-advance_condition = &"is_idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jbkey"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xd5y4"]
-advance_mode = 2
-advance_condition = &"is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_opv31"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dh1bw"]
-advance_mode = 2
-advance_condition = &"is_landing"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0j82m"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"is_idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ll1ml"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"is_running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i4p3b"]
-advance_mode = 2
-advance_condition = &"is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xdm83"]
-advance_mode = 2
-advance_condition = &"is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eaa0m"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qmiq0"]
-advance_mode = 2
-advance_condition = &"is_landing"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0a3xq"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"is_running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s7ive"]
-advance_mode = 2
-advance_condition = &"is_running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5olm1"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qo2uf"]
-advance_mode = 2
-advance_condition = &"is_idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yu5a7"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h3puh"]
-advance_mode = 2
-advance_condition = &"is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x86sd"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"is_idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cb5du"]
-advance_mode = 2
-advance_condition = &"is_burned"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bemlj"]
-advance_mode = 2
-advance_condition = &"is_burning"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rdata"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"is_idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vcege"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"is_running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vmvoh"]
-advance_mode = 2
-advance_condition = &"is_burning"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ksf0n"]
-advance_mode = 2
-advance_condition = &"is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p06rt"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w4ed4"]
-advance_mode = 2
-advance_condition = &"is_landing"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mha86"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"is_idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ce5hi"]
-advance_mode = 2
-advance_condition = &"is_running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qa65i"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vakod"]
-advance_mode = 2
-advance_condition = &"is_idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2j1uw"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lscxe"]
-switch_mode = 2
-advance_mode = 2
-advance_condition = &"is_running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ykfw0"]
-advance_mode = 2
-advance_condition = &"is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_410cr"]
-advance_mode = 2
-advance_condition = &"is_leg_broken"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3vqxs"]
-advance_mode = 2
-advance_condition = &"is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_njqkv"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fjqk3"]
-advance_mode = 2
-advance_condition = &"is_landing"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5on52"]
-advance_mode = 2
-advance_condition = &"is_running"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l0uhd"]
-advance_mode = 2
-advance_condition = &"is_jumping"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ig47n"]
-advance_mode = 2
-advance_condition = &"is_idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vv5ov"]
-advance_mode = 2
-advance_condition = &"is_squashed"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_67wyt"]
-states/Burn/node = SubResource("AnimationNodeAnimation_iwwga")
-states/Burn/position = Vector2(547, 583)
-states/Burned_Cis/node = SubResource("AnimationNodeAnimation_yt8x0")
-states/Burned_Cis/position = Vector2(656, 527)
-states/Burned_Fall/node = SubResource("AnimationNodeAnimation_o1avd")
-states/Burned_Fall/position = Vector2(1037, 421)
-states/Burned_Idle/node = SubResource("AnimationNodeAnimation_1fnqc")
-states/Burned_Idle/position = Vector2(819, 305)
-states/Burned_Jump/node = SubResource("AnimationNodeAnimation_rlvk7")
-states/Burned_Jump/position = Vector2(1037, 305)
-states/Burned_Land/node = SubResource("AnimationNodeAnimation_t785b")
-states/Burned_Land/position = Vector2(819, 421)
-states/Burned_Run/node = SubResource("AnimationNodeAnimation_f2r6o")
-states/Burned_Run/position = Vector2(819, 527)
-states/Burned_Trans/node = SubResource("AnimationNodeAnimation_a7lxy")
-states/Burned_Trans/position = Vector2(1016, 527)
-states/Cis/node = SubResource("AnimationNodeAnimation_p8txu")
-states/Cis/position = Vector2(219, 532)
-states/End/position = Vector2(1331, 305)
-states/Fall/node = SubResource("AnimationNodeAnimation_ggmrw")
-states/Fall/position = Vector2(491, 421)
-states/Idle/node = SubResource("AnimationNodeAnimation_75xx3")
-states/Idle/position = Vector2(352, 305)
-states/Jump/node = SubResource("AnimationNodeAnimation_45u1a")
-states/Jump/position = Vector2(491, 305)
-states/Land/node = SubResource("AnimationNodeAnimation_ub3my")
-states/Land/position = Vector2(352, 421)
-states/Run/node = SubResource("AnimationNodeAnimation_oickt")
-states/Run/position = Vector2(352, 532)
-states/Squashed_Fall/node = SubResource("AnimationNodeAnimation_pfg18")
-states/Squashed_Fall/position = Vector2(779.397, 838.765)
-states/Squashed_Idle/node = SubResource("AnimationNodeAnimation_yqfuv")
-states/Squashed_Idle/position = Vector2(779.397, 719.765)
-states/Squashed_Jump/node = SubResource("AnimationNodeAnimation_lbig4")
-states/Squashed_Jump/position = Vector2(1016, 719.765)
-states/Squashed_Run/node = SubResource("AnimationNodeAnimation_61g14")
-states/Squashed_Run/position = Vector2(1016, 838.765)
-states/Start/position = Vector2(141, 305)
-states/Tibia_Cis/node = SubResource("AnimationNodeAnimation_it2rt")
-states/Tibia_Cis/position = Vector2(189.397, 866.765)
-states/Tibia_Fall/node = SubResource("AnimationNodeAnimation_tddnl")
-states/Tibia_Fall/position = Vector2(576.397, 773.765)
-states/Tibia_Idle/node = SubResource("AnimationNodeAnimation_l2gom")
-states/Tibia_Idle/position = Vector2(369.397, 676.765)
-states/Tibia_Jump/node = SubResource("AnimationNodeAnimation_wh5m6")
-states/Tibia_Jump/position = Vector2(576.397, 676.765)
-states/Tibia_Land/node = SubResource("AnimationNodeAnimation_afmd1")
-states/Tibia_Land/position = Vector2(369.397, 773.765)
-states/Tibia_Run/node = SubResource("AnimationNodeAnimation_p5y50")
-states/Tibia_Run/position = Vector2(369.397, 866.765)
-states/Tibia_Trans/node = SubResource("AnimationNodeAnimation_7mcou")
-states/Tibia_Trans/position = Vector2(576.397, 866.765)
-states/Trans/node = SubResource("AnimationNodeAnimation_xj35d")
-states/Trans/position = Vector2(479, 532)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_mk10i"), "Idle", "Trans", SubResource("AnimationNodeStateMachineTransition_jes1g"), "Trans", "Run", SubResource("AnimationNodeStateMachineTransition_2ycvw"), "Run", "Cis", SubResource("AnimationNodeStateMachineTransition_kenib"), "Cis", "Idle", SubResource("AnimationNodeStateMachineTransition_jbkey"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_xd5y4"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_opv31"), "Fall", "Land", SubResource("AnimationNodeStateMachineTransition_dh1bw"), "Land", "Idle", SubResource("AnimationNodeStateMachineTransition_0j82m"), "Land", "Run", SubResource("AnimationNodeStateMachineTransition_ll1ml"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_i4p3b"), "Burned_Idle", "Burned_Jump", SubResource("AnimationNodeStateMachineTransition_xdm83"), "Burned_Jump", "Burned_Fall", SubResource("AnimationNodeStateMachineTransition_eaa0m"), "Burned_Fall", "Burned_Land", SubResource("AnimationNodeStateMachineTransition_qmiq0"), "Burned_Land", "Burned_Run", SubResource("AnimationNodeStateMachineTransition_0a3xq"), "Burned_Idle", "Burned_Trans", SubResource("AnimationNodeStateMachineTransition_s7ive"), "Burned_Trans", "Burned_Run", SubResource("AnimationNodeStateMachineTransition_5olm1"), "Burned_Run", "Burned_Cis", SubResource("AnimationNodeStateMachineTransition_qo2uf"), "Burned_Cis", "Burned_Idle", SubResource("AnimationNodeStateMachineTransition_yu5a7"), "Burned_Run", "Burned_Jump", SubResource("AnimationNodeStateMachineTransition_h3puh"), "Burned_Land", "Burned_Idle", SubResource("AnimationNodeStateMachineTransition_x86sd"), "Idle", "Burned_Idle", SubResource("AnimationNodeStateMachineTransition_cb5du"), "Burned_Idle", "Burn", SubResource("AnimationNodeStateMachineTransition_bemlj"), "Burn", "Burned_Idle", SubResource("AnimationNodeStateMachineTransition_rdata"), "Burn", "Burned_Trans", SubResource("AnimationNodeStateMachineTransition_vcege"), "Burned_Run", "Burn", SubResource("AnimationNodeStateMachineTransition_vmvoh"), "Tibia_Idle", "Tibia_Jump", SubResource("AnimationNodeStateMachineTransition_ksf0n"), "Tibia_Jump", "Tibia_Fall", SubResource("AnimationNodeStateMachineTransition_p06rt"), "Tibia_Fall", "Tibia_Land", SubResource("AnimationNodeStateMachineTransition_w4ed4"), "Tibia_Land", "Tibia_Idle", SubResource("AnimationNodeStateMachineTransition_mha86"), "Tibia_Idle", "Tibia_Trans", SubResource("AnimationNodeStateMachineTransition_ce5hi"), "Tibia_Trans", "Tibia_Run", SubResource("AnimationNodeStateMachineTransition_qa65i"), "Tibia_Run", "Tibia_Cis", SubResource("AnimationNodeStateMachineTransition_vakod"), "Tibia_Cis", "Tibia_Idle", SubResource("AnimationNodeStateMachineTransition_2j1uw"), "Tibia_Land", "Tibia_Run", SubResource("AnimationNodeStateMachineTransition_lscxe"), "Tibia_Run", "Tibia_Jump", SubResource("AnimationNodeStateMachineTransition_ykfw0"), "Burned_Idle", "Tibia_Idle", SubResource("AnimationNodeStateMachineTransition_410cr"), "Squashed_Idle", "Squashed_Jump", SubResource("AnimationNodeStateMachineTransition_3vqxs"), "Squashed_Jump", "Squashed_Fall", SubResource("AnimationNodeStateMachineTransition_njqkv"), "Squashed_Fall", "Squashed_Idle", SubResource("AnimationNodeStateMachineTransition_fjqk3"), "Squashed_Idle", "Squashed_Run", SubResource("AnimationNodeStateMachineTransition_5on52"), "Squashed_Run", "Squashed_Jump", SubResource("AnimationNodeStateMachineTransition_l0uhd"), "Squashed_Run", "Squashed_Idle", SubResource("AnimationNodeStateMachineTransition_ig47n"), "Tibia_Idle", "Squashed_Idle", SubResource("AnimationNodeStateMachineTransition_vv5ov")]
-graph_offset = Vector2(103.397, 246.765)
 
 [sub_resource type="Animation" id="Animation_hmwdr"]
 resource_name = "Burn"
@@ -757,8 +438,41 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_4wcg8"]
+resource_name = "Look"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base_Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [56]
+}
+
+[sub_resource type="Animation" id="Animation_87qh7"]
+resource_name = "Broken"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Base_Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [55]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vbsen"]
 _data = {
+"Broken": SubResource("Animation_87qh7"),
 "Burn": SubResource("Animation_hmwdr"),
 "Burned_Cis": SubResource("Animation_nos70"),
 "Burned_Fall": SubResource("Animation_gplb6"),
@@ -772,6 +486,7 @@ _data = {
 "Idle": SubResource("Animation_pmvqe"),
 "Jump": SubResource("Animation_qaty3"),
 "Land": SubResource("Animation_dptsd"),
+"Look": SubResource("Animation_4wcg8"),
 "RESET": SubResource("Animation_cfoi4"),
 "Run": SubResource("Animation_p6pjg"),
 "Squashed_Fall": SubResource("Animation_hrq7t"),
@@ -789,6 +504,347 @@ _data = {
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_oqmen"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rvjgh"]
+animation = &"Broken"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iwwga"]
+animation = &"Burn"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yt8x0"]
+animation = &"Burned_Cis"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o1avd"]
+animation = &"Burned_Fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1fnqc"]
+animation = &"Burned_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlvk7"]
+animation = &"Burned_Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t785b"]
+animation = &"Burned_Land"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f2r6o"]
+animation = &"Burned_Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a7lxy"]
+animation = &"Burned_Trans"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p8txu"]
+animation = &"Cis"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ggmrw"]
+animation = &"Fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_75xx3"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_45u1a"]
+animation = &"Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ub3my"]
+animation = &"Land"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dm2pr"]
+animation = &"Look"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oickt"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pfg18"]
+animation = &"Squashed_Fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yqfuv"]
+animation = &"Squashed_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lbig4"]
+animation = &"Squashed_Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_61g14"]
+animation = &"Squashed_Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_it2rt"]
+animation = &"Tibia_Cis"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tddnl"]
+animation = &"Tibia_Fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l2gom"]
+animation = &"Tibia_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wh5m6"]
+animation = &"Tibia_Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_afmd1"]
+animation = &"Tibia_Land"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p5y50"]
+animation = &"Tibia_Run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7mcou"]
+animation = &"Tibia_Trans"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xj35d"]
+animation = &"Trans"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mk10i"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jes1g"]
+advance_mode = 2
+advance_condition = &"is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ycvw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kenib"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jbkey"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xd5y4"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_opv31"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dh1bw"]
+advance_mode = 2
+advance_condition = &"is_landing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0j82m"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ll1ml"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i4p3b"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xdm83"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eaa0m"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qmiq0"]
+advance_mode = 2
+advance_condition = &"is_landing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0a3xq"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s7ive"]
+advance_mode = 2
+advance_condition = &"is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5olm1"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qo2uf"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yu5a7"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h3puh"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x86sd"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cb5du"]
+advance_mode = 2
+advance_condition = &"is_burned"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bemlj"]
+advance_mode = 2
+advance_condition = &"is_burning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rdata"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vcege"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vmvoh"]
+advance_mode = 2
+advance_condition = &"is_burning"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ksf0n"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_p06rt"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w4ed4"]
+advance_mode = 2
+advance_condition = &"is_landing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mha86"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ce5hi"]
+advance_mode = 2
+advance_condition = &"is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qa65i"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vakod"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2j1uw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lscxe"]
+switch_mode = 2
+advance_mode = 2
+advance_condition = &"is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ykfw0"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3vqxs"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_njqkv"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fjqk3"]
+advance_mode = 2
+advance_condition = &"is_landing"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5on52"]
+advance_mode = 2
+advance_condition = &"is_running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l0uhd"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ig47n"]
+advance_mode = 2
+advance_condition = &"is_idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cjp4r"]
+advance_mode = 2
+advance_condition = &"is_looking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fxd7m"]
+advance_mode = 2
+advance_condition = &"is_squashed"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h4efm"]
+advance_mode = 2
+advance_condition = &"is_looking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q78o3"]
+advance_mode = 2
+advance_condition = &"is_leg_broken"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_guna6"]
+advance_mode = 2
+advance_condition = &"is_jumping"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_67wyt"]
+states/Broken/node = SubResource("AnimationNodeAnimation_rvjgh")
+states/Broken/position = Vector2(538.397, 586.61)
+states/Burn/node = SubResource("AnimationNodeAnimation_iwwga")
+states/Burn/position = Vector2(716, 617)
+states/Burned_Cis/node = SubResource("AnimationNodeAnimation_yt8x0")
+states/Burned_Cis/position = Vector2(656, 527)
+states/Burned_Fall/node = SubResource("AnimationNodeAnimation_o1avd")
+states/Burned_Fall/position = Vector2(1037, 421)
+states/Burned_Idle/node = SubResource("AnimationNodeAnimation_1fnqc")
+states/Burned_Idle/position = Vector2(819, 305)
+states/Burned_Jump/node = SubResource("AnimationNodeAnimation_rlvk7")
+states/Burned_Jump/position = Vector2(1037, 305)
+states/Burned_Land/node = SubResource("AnimationNodeAnimation_t785b")
+states/Burned_Land/position = Vector2(819, 421)
+states/Burned_Run/node = SubResource("AnimationNodeAnimation_f2r6o")
+states/Burned_Run/position = Vector2(819, 527)
+states/Burned_Trans/node = SubResource("AnimationNodeAnimation_a7lxy")
+states/Burned_Trans/position = Vector2(1016, 527)
+states/Cis/node = SubResource("AnimationNodeAnimation_p8txu")
+states/Cis/position = Vector2(219, 532)
+states/End/position = Vector2(1331, 305)
+states/Fall/node = SubResource("AnimationNodeAnimation_ggmrw")
+states/Fall/position = Vector2(491, 421)
+states/Idle/node = SubResource("AnimationNodeAnimation_75xx3")
+states/Idle/position = Vector2(352, 305)
+states/Jump/node = SubResource("AnimationNodeAnimation_45u1a")
+states/Jump/position = Vector2(491, 305)
+states/Land/node = SubResource("AnimationNodeAnimation_ub3my")
+states/Land/position = Vector2(352, 421)
+states/Look/node = SubResource("AnimationNodeAnimation_dm2pr")
+states/Look/position = Vector2(656, 725.61)
+states/Run/node = SubResource("AnimationNodeAnimation_oickt")
+states/Run/position = Vector2(352, 532)
+states/Squashed_Fall/node = SubResource("AnimationNodeAnimation_pfg18")
+states/Squashed_Fall/position = Vector2(779.397, 838.765)
+states/Squashed_Idle/node = SubResource("AnimationNodeAnimation_yqfuv")
+states/Squashed_Idle/position = Vector2(788.397, 719.765)
+states/Squashed_Jump/node = SubResource("AnimationNodeAnimation_lbig4")
+states/Squashed_Jump/position = Vector2(1016, 719.765)
+states/Squashed_Run/node = SubResource("AnimationNodeAnimation_61g14")
+states/Squashed_Run/position = Vector2(1042, 833.765)
+states/Start/position = Vector2(141, 305)
+states/Tibia_Cis/node = SubResource("AnimationNodeAnimation_it2rt")
+states/Tibia_Cis/position = Vector2(189.397, 866.765)
+states/Tibia_Fall/node = SubResource("AnimationNodeAnimation_tddnl")
+states/Tibia_Fall/position = Vector2(576.397, 773.765)
+states/Tibia_Idle/node = SubResource("AnimationNodeAnimation_l2gom")
+states/Tibia_Idle/position = Vector2(369.397, 676.765)
+states/Tibia_Jump/node = SubResource("AnimationNodeAnimation_wh5m6")
+states/Tibia_Jump/position = Vector2(576.397, 676.765)
+states/Tibia_Land/node = SubResource("AnimationNodeAnimation_afmd1")
+states/Tibia_Land/position = Vector2(369.397, 773.765)
+states/Tibia_Run/node = SubResource("AnimationNodeAnimation_p5y50")
+states/Tibia_Run/position = Vector2(369.397, 866.765)
+states/Tibia_Trans/node = SubResource("AnimationNodeAnimation_7mcou")
+states/Tibia_Trans/position = Vector2(576.397, 866.765)
+states/Trans/node = SubResource("AnimationNodeAnimation_xj35d")
+states/Trans/position = Vector2(479, 532)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_mk10i"), "Idle", "Trans", SubResource("AnimationNodeStateMachineTransition_jes1g"), "Trans", "Run", SubResource("AnimationNodeStateMachineTransition_2ycvw"), "Run", "Cis", SubResource("AnimationNodeStateMachineTransition_kenib"), "Cis", "Idle", SubResource("AnimationNodeStateMachineTransition_jbkey"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_xd5y4"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_opv31"), "Fall", "Land", SubResource("AnimationNodeStateMachineTransition_dh1bw"), "Land", "Idle", SubResource("AnimationNodeStateMachineTransition_0j82m"), "Land", "Run", SubResource("AnimationNodeStateMachineTransition_ll1ml"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_i4p3b"), "Burned_Idle", "Burned_Jump", SubResource("AnimationNodeStateMachineTransition_xdm83"), "Burned_Jump", "Burned_Fall", SubResource("AnimationNodeStateMachineTransition_eaa0m"), "Burned_Fall", "Burned_Land", SubResource("AnimationNodeStateMachineTransition_qmiq0"), "Burned_Land", "Burned_Run", SubResource("AnimationNodeStateMachineTransition_0a3xq"), "Burned_Idle", "Burned_Trans", SubResource("AnimationNodeStateMachineTransition_s7ive"), "Burned_Trans", "Burned_Run", SubResource("AnimationNodeStateMachineTransition_5olm1"), "Burned_Run", "Burned_Cis", SubResource("AnimationNodeStateMachineTransition_qo2uf"), "Burned_Cis", "Burned_Idle", SubResource("AnimationNodeStateMachineTransition_yu5a7"), "Burned_Run", "Burned_Jump", SubResource("AnimationNodeStateMachineTransition_h3puh"), "Burned_Land", "Burned_Idle", SubResource("AnimationNodeStateMachineTransition_x86sd"), "Idle", "Burned_Idle", SubResource("AnimationNodeStateMachineTransition_cb5du"), "Burned_Idle", "Burn", SubResource("AnimationNodeStateMachineTransition_bemlj"), "Burn", "Burned_Idle", SubResource("AnimationNodeStateMachineTransition_rdata"), "Burn", "Burned_Trans", SubResource("AnimationNodeStateMachineTransition_vcege"), "Burned_Run", "Burn", SubResource("AnimationNodeStateMachineTransition_vmvoh"), "Tibia_Idle", "Tibia_Jump", SubResource("AnimationNodeStateMachineTransition_ksf0n"), "Tibia_Jump", "Tibia_Fall", SubResource("AnimationNodeStateMachineTransition_p06rt"), "Tibia_Fall", "Tibia_Land", SubResource("AnimationNodeStateMachineTransition_w4ed4"), "Tibia_Land", "Tibia_Idle", SubResource("AnimationNodeStateMachineTransition_mha86"), "Tibia_Idle", "Tibia_Trans", SubResource("AnimationNodeStateMachineTransition_ce5hi"), "Tibia_Trans", "Tibia_Run", SubResource("AnimationNodeStateMachineTransition_qa65i"), "Tibia_Run", "Tibia_Cis", SubResource("AnimationNodeStateMachineTransition_vakod"), "Tibia_Cis", "Tibia_Idle", SubResource("AnimationNodeStateMachineTransition_2j1uw"), "Tibia_Land", "Tibia_Run", SubResource("AnimationNodeStateMachineTransition_lscxe"), "Tibia_Run", "Tibia_Jump", SubResource("AnimationNodeStateMachineTransition_ykfw0"), "Squashed_Idle", "Squashed_Jump", SubResource("AnimationNodeStateMachineTransition_3vqxs"), "Squashed_Jump", "Squashed_Fall", SubResource("AnimationNodeStateMachineTransition_njqkv"), "Squashed_Fall", "Squashed_Idle", SubResource("AnimationNodeStateMachineTransition_fjqk3"), "Squashed_Idle", "Squashed_Run", SubResource("AnimationNodeStateMachineTransition_5on52"), "Squashed_Run", "Squashed_Jump", SubResource("AnimationNodeStateMachineTransition_l0uhd"), "Squashed_Run", "Squashed_Idle", SubResource("AnimationNodeStateMachineTransition_ig47n"), "Tibia_Idle", "Look", SubResource("AnimationNodeStateMachineTransition_cjp4r"), "Look", "Squashed_Idle", SubResource("AnimationNodeStateMachineTransition_fxd7m"), "Tibia_Run", "Look", SubResource("AnimationNodeStateMachineTransition_h4efm"), "Burned_Idle", "Broken", SubResource("AnimationNodeStateMachineTransition_q78o3"), "Broken", "Tibia_Jump", SubResource("AnimationNodeStateMachineTransition_guna6")]
+graph_offset = Vector2(103.397, 250.61)
 
 [sub_resource type="Animation" id="Animation_pxypx"]
 resource_name = "Burn"
@@ -922,6 +978,12 @@ metadata/_edit_lock_ = true
 position = Vector2(42, 0.666667)
 metadata/_edit_lock_ = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vbsen"),
+"Squashed_Burn": SubResource("AnimationLibrary_oqmen")
+}
+
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_67wyt")
 anim_player = NodePath("../AnimationPlayer")
@@ -931,14 +993,9 @@ parameters/conditions/is_idle = false
 parameters/conditions/is_jumping = false
 parameters/conditions/is_landing = false
 parameters/conditions/is_leg_broken = false
+parameters/conditions/is_looking = false
 parameters/conditions/is_running = false
 parameters/conditions/is_squashed = false
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_vbsen"),
-"Squashed_Burn": SubResource("AnimationLibrary_oqmen")
-}
 
 [node name="FireAnimation" type="AnimationPlayer" parent="."]
 libraries = {
@@ -951,7 +1008,7 @@ anim_player = NodePath("../FireAnimation")
 parameters/conditions/is_burning = false
 parameters/conditions/is_disabled = false
 
-[node name="WalljumpTimer" type="Timer" parent="."]
-wait_time = 0.055
+[node name="AnvilTimer" type="Timer" parent="."]
+wait_time = 4.0
 
-[connection signal="timeout" from="WalljumpTimer" to="." method="_on_walljump_timer_timeout"]
+[connection signal="timeout" from="AnvilTimer" to="." method="_on_anvil_timer_timeout"]

@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://vt5irp8xkipl"]
+[gd_scene load_steps=4 format=3 uid="uid://vt5irp8xkipl"]
 
+[ext_resource type="Script" path="res://scenes/objects/joist/joist.gd" id="1_pja02"]
 [ext_resource type="Texture2D" uid="uid://c52sn5uri8xou" path="res://assets/sprites/viga.png" id="1_r1drh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yqkf"]
 size = Vector2(1276, 116)
 
 [node name="Joist" type="StaticBody2D"]
+script = ExtResource("1_pja02")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_r1drh")

@@ -2,6 +2,7 @@ extends Area2D
 
 var dropped = 0
 var velocity = 0
+var acceleration = 1200
 @export var end_pos : Vector2
 
 func _ready():
@@ -10,8 +11,8 @@ func _ready():
 func _physics_process(delta):
 	if dropped:
 		if not position.y >= end_pos.y:
-			velocity += gravity*delta
-			position.y += velocity*delta
+			velocity += acceleration * delta
+			position.y += velocity * delta
 		else:
 			position = end_pos
 
@@ -22,10 +23,9 @@ func _on_body_entered(body):
 		get_parent().tress_flip()
 
 func _on_area_2d_body_entered(body):
-	
 	if body.name == "Rana":
-		$Timer.start()
 		body.handle_anvil()
+		$Timer.start()
 		$Sprite2D.visible = true
 		get_parent().tress_drop()
 
