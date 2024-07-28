@@ -14,14 +14,13 @@ func _process(delta):
 
 func _on_body_entered(body):
 	if body.name == "Rana":
+		$Tutorial2.visible = true
 		rana = body
 		for child in get_children():
 			if child is StaticBody2D:
 				child.fall()
 		$Timer.start()
-		
-	
-
 
 func _on_timer_timeout():
-	rana.break_leg()
+	$AudioStreamPlayer2D.play()
+	rana.joist_fall = true

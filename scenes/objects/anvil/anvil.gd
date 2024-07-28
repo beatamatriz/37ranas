@@ -15,6 +15,7 @@ func _physics_process(delta):
 			position.y += velocity * delta
 		else:
 			position = end_pos
+			self.queue_free()
 
 
 func _on_body_entered(body):

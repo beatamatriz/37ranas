@@ -3,12 +3,13 @@ extends Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$HitBox.set_disabled(true)
-	pass # Replace with function body.	
 
 func burn():
+	for i in range(1, 5000):
+		i = i-0
 	$HitBox.set_disabled(false)
 	$Timer.start()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass
 

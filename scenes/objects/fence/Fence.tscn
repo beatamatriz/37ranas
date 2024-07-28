@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d242lxecjsj77"]
+
+[ext_resource type="Texture2D" uid="uid://dbtxteeglw6fq" path="res://assets/sprites/valla.png" id="1_1ypiu"]
+
+[node name="Fence" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1ypiu")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-73, 110, 77, 106, 82, -744, 93, -946, -2283, -964, -3318, -946, -3309, -847, -36, -855, -43.5828, -96.5947)

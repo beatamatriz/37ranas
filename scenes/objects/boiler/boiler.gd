@@ -14,4 +14,6 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.name == "Rana":
 		body.burn()
+		$AudioStreamPlayer2D.play()
+		$Tutorial.visible = true
 	

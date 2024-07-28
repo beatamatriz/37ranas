@@ -22,9 +22,6 @@ var current_direction = 0
 func move_and_act(delta):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	var v_direction = Input.get_axis("ui_down", "ui_up")
-	
-	if not is_on_floor():
-		velocity.y += gravity * delta
 
 	if Input.is_action_just_pressed("ui_accept"):
 		$AnimationTree["parameters/conditions/is_jumping"] = true
@@ -103,6 +100,7 @@ func fireball():
 
 func break_leg():
 	state = 2
+	joist_fall = false
 	$AnimationTree["parameters/conditions/is_leg_broken"] = true
 
 # STATE 3
@@ -131,12 +129,12 @@ func _ready():
 	$CollisionSquashed.set_disabled(true)
 
 func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	if canmove:
 		move_and_act(delta)
 	update_animation()
 	move_and_slide()
-
-
 
 func _on_anvil_timer_timeout():
 	squash()

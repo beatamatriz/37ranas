@@ -3,15 +3,17 @@
 [ext_resource type="Script" path="res://scenes/rana/fireball/fireball.gd" id="1_l7icb"]
 [ext_resource type="Script" path="res://scenes/rana/fireball/timer/timer.gd" id="2_j8py2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jc8e8"]
-radius = 26.0768
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ua22c"]
+radius = 13.0
+height = 86.0
 
 [node name="Fireball" type="Area2D"]
 position = Vector2(61, -2)
 script = ExtResource("1_l7icb")
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_jc8e8")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ua22c")
 metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]

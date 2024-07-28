@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d06n1jndq8d8k" path="res://assets/sprites/ascensor.png" id="2_xyqh3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_73xp7"]
-size = Vector2(388, 242)
+size = Vector2(381, 303)
 
 [node name="Elevator" type="CharacterBody2D"]
 script = ExtResource("1_78hoq")
@@ -22,12 +22,18 @@ polygon = PackedVector2Array(168, -365.457, -285, -367.181, -276, 275.816, 170, 
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-28, -20)
+position = Vector2(-51.5, -15.5)
 shape = SubResource("RectangleShape2D_73xp7")
 metadata/_edit_lock_ = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.761
+one_shot = true
+
+[node name="EasterEggTimer" type="Timer" parent="."]
+wait_time = 7.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="EasterEggTimer" to="." method="_on_easter_egg_timer_timeout"]

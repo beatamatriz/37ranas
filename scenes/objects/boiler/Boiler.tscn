@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://p427yv5sbljs"]
+[gd_scene load_steps=7 format=3 uid="uid://p427yv5sbljs"]
 
 [ext_resource type="Script" path="res://scenes/objects/boiler/boiler.gd" id="1_lyaka"]
 [ext_resource type="Texture2D" uid="uid://dbk1w1n14o844" path="res://assets/sprites/caldera.png" id="1_maomt"]
+[ext_resource type="AudioStream" uid="uid://cjf6t5f2vr85r" path="res://assets/sounds/Fuego.wav" id="3_tkiek"]
 
 [sub_resource type="Animation" id="Animation_4gi0c"]
 resource_name = "Idle"
@@ -54,6 +55,9 @@ libraries = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-210, -354, 226, -353, 562, 67, 1106, 347, -216, 340)
+polygon = PackedVector2Array(-210, -354, 250, -353, 250, 203, 498, 343, -216, 340)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tkiek")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
