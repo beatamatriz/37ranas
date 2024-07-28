@@ -134,8 +134,8 @@ size = Vector2(897, 459)
 script = ExtResource("1_slsy8")
 
 [node name="BG" type="Sprite2D" parent="."]
-position = Vector2(3899, -2866.75)
-scale = Vector2(0.986413, 1.28283)
+position = Vector2(3902, -2880.75)
+scale = Vector2(0.985904, 1.28688)
 texture = ExtResource("1_gbiwl")
 metadata/_edit_lock_ = true
 
@@ -149,8 +149,8 @@ metadata/_edit_lock_ = true
 position = Vector2(1094, 780)
 
 [node name="Tutorial" type="Sprite2D" parent="Boiler"]
-visible = false
-position = Vector2(5026, -1090)
+position = Vector2(4554.93, -931.875)
+scale = Vector2(1.52536, 1.52536)
 texture = ExtResource("5_kk4y0")
 
 [node name="Box" parent="." instance=ExtResource("3_2w1y7")]
@@ -186,8 +186,8 @@ position = Vector2(-1080, -7000)
 texture = ExtResource("11_y4k2b")
 
 [node name="ZonaDeTress" type="Sprite2D" parent="StickersBG"]
-position = Vector2(6902, -124)
-scale = Vector2(1.95474, 1.77327)
+position = Vector2(6929, -55)
+scale = Vector2(2.51786, 2.28411)
 texture = ExtResource("17_3tf86")
 
 [node name="Nube1" type="Sprite2D" parent="StickersBG"]
@@ -264,6 +264,7 @@ rotation = 0.120428
 script = ExtResource("11_46w87")
 
 [node name="Tutorial2" type="Sprite2D" parent="JoistManager/JoistManager"]
+visible = false
 position = Vector2(-87.288, 2549.96)
 rotation = -0.120428
 scale = Vector2(-3.297, 3.297)
