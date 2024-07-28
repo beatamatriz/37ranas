@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://vt5irp8xkipl"]
+
+[ext_resource type="Texture2D" uid="uid://c52sn5uri8xou" path="res://assets/sprites/viga.png" id="1_r1drh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yqkf"]
+size = Vector2(1276, 116)
+
+[node name="Joist" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r1drh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, 170)
+shape = SubResource("RectangleShape2D_4yqkf")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c52sn5uri8xou"
-path="res://.godot/imported/BIGA.png-8059a17f4d968942ccceed136d1242bf.ctex"
+uid="uid://b8pykxkqpcunq"
+path="res://.godot/imported/carusa.png-5bad8baa50caee6c18ed96dcfe3648f6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/BIGA.png"
-dest_files=["res://.godot/imported/BIGA.png-8059a17f4d968942ccceed136d1242bf.ctex"]
+source_file="res://assets/stickers/carusa.png"
+dest_files=["res://.godot/imported/carusa.png-5bad8baa50caee6c18ed96dcfe3648f6.ctex"]
 
 [params]
 

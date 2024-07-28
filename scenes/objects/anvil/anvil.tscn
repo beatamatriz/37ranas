@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmhnd6y4ociv4"]
+[gd_scene load_steps=5 format=3 uid="uid://bmhnd6y4ociv4"]
 
 [ext_resource type="Script" path="res://scenes/objects/anvil/anvil.gd" id="1_jk2fa"]
 [ext_resource type="Texture2D" uid="uid://b3lebhptx82f2" path="res://assets/sprites/yunque.png" id="2_0mibm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i2vla"]
 size = Vector2(346, 87)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n213w"]
+size = Vector2(176, 1847)
 
 [node name="Anvil" type="Area2D"]
 script = ExtResource("1_jk2fa")
@@ -18,4 +21,17 @@ texture = ExtResource("2_0mibm")
 position = Vector2(14, 99.5)
 shape = SubResource("RectangleShape2D_i2vla")
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(8, 552)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-60, 466.5)
+shape = SubResource("RectangleShape2D_n213w")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

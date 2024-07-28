@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-
 @export var speed : float = 900.0
 @export var pushback : float = 900.0
 @export var jump_velocity : float = -1700.0
@@ -11,13 +9,16 @@ extends CharacterBody2D
 
 const god = true
 
-#var canmove = true
-var state = 5
+var state = 0
 var on_wall = false
 var cooldown = false
 var current_direction = 0
 
-#MODIFICADO
+# AUX
+
+func is_direction_flipped(new_direction):
+	return current_direction * new_direction < 0
+
 func update_animation():
 	if is_on_floor():
 		if velocity == Vector2.ZERO:
@@ -29,7 +30,11 @@ func update_animation():
 	if velocity.y == 0 and is_on_floor():
 		$AnimationTree["parameters/conditions/is_jumping"] = false
 		$AnimationTree["parameters/conditions/is_landing"] = true 
+
+# STATE 1
+
 func burn():
+	state = 1
 	$Fire_Sprite.visible = true
 	$FireAnimationTree["parameters/conditions/is_burning"] = true
 	$AnimationTree["parameters/conditions/is_burned"] = true
@@ -38,18 +43,25 @@ func fireball():
 	$AnimationTree["parameters/conditions/is_burning"] = true
 	$Fireball.burn()
 
+# STATE 2
+
+func break_leg():
+	state = 2
+	$AnimationTree["parameters/conditions/is_leg_broken"] = true
+
+# STATE 3
+
+func handle_anvil():
+	pass
+
 func squash():
+	state = 4
 	$Fire_Sprite.visible = false
 	$AnimationTree["parameters/conditions/is_squashed"] = true
-	$FireAnimationTree["parameters/conditions/is_disabled"] = true
 	$CollisionNormal.set_disabled(true)
 	$CollisionSquashed.set_disabled(false)
 
-func is_direction_flipped(new_direction):
-	return current_direction * new_direction < 0
-
-func break_leg():
-	$AnimationTree["parameters/conditions/is_leg_broken"] = true
+# EVENTS
 
 func _ready():
 	$Fire_Sprite.visible = false
@@ -64,7 +76,7 @@ func _physics_process(delta):
 		
 		$AnimationTree["parameters/conditions/is_jumping"] = true
 		$AnimationTree["parameters/conditions/is_landing"] = false
-		if is_on_floor():
+		if is_on_floor() or not $AnimationTree["parameters/conditions/is_jumping"]:
 			velocity.y = jump_velocity
 		if state >= 2 and is_on_wall() and Input.is_action_pressed("ui_left"):
 			velocity.y = jump_velocity
@@ -90,7 +102,6 @@ func _physics_process(delta):
 	#state 3
 	if state == 3 or (god and Input.is_key_pressed(KEY_0)):
 		squash()
-		state += 1
 		
 	if direction:
 		velocity.x = direction * speed
