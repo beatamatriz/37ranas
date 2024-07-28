@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://y5l5epgitxnp"]
+[gd_scene load_steps=8 format=3 uid="uid://y5l5epgitxnp"]
 
-[ext_resource type="Texture2D" uid="uid://j7kjdxwehba3" path="res://assets/placeholders/bloque.png" id="1_yekfg"]
+[ext_resource type="Texture2D" uid="uid://dbfjavkeis8e8" path="res://assets/sprites/caja.png" id="1_pgpx8"]
+[ext_resource type="Texture2D" uid="uid://dp5xenl2hlfao" path="res://assets/sprites/Llamarada.png" id="2_6uxlo"]
 
 [sub_resource type="GDScript" id="GDScript_dfnrn"]
 script/source = "extends StaticBody2D
@@ -8,6 +9,7 @@ script/source = "extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$FlameSprite.visible = false
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,7 +17,8 @@ func _process(delta):
 	pass
 
 func burn():
-	#$AnimationPlayer.play(\"Burning\")
+	$FlameSprite.visible = true
+	$AnimationPlayer.play(\"Burning\")
 	$Timer.start()
 
 
@@ -24,22 +27,67 @@ func _on_timer_timeout():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmpxk"]
-size = Vector2(40.8889, 40.8889)
+size = Vector2(50.8889, 44.8889)
+
+[sub_resource type="Animation" id="Animation_vuvwr"]
+resource_name = "Burning"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlameSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.800875, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 4, 3, 2]
+}
+
+[sub_resource type="Animation" id="Animation_38upf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlameSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fn84w"]
+_data = {
+"Burning": SubResource("Animation_vuvwr"),
+"RESET": SubResource("Animation_38upf")
+}
 
 [node name="Box" type="StaticBody2D"]
 scale = Vector2(9, 9)
 script = SubResource("GDScript_dfnrn")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.666667, -9.77778)
+scale = Vector2(0.144444, 0.144444)
+texture = ExtResource("1_pgpx8")
+
+[node name="FlameSprite" type="Sprite2D" parent="."]
+position = Vector2(1.33333, -5.31945)
+scale = Vector2(0.124889, 0.107167)
+texture = ExtResource("2_6uxlo")
+hframes = 10
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-9.53674e-07, -9.53674e-07)
+position = Vector2(2, -2)
 shape = SubResource("RectangleShape2D_lmpxk")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.57692, 2.5625)
-texture = ExtResource("1_yekfg")
-metadata/_edit_lock_ = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fn84w")
+}
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

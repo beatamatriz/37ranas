@@ -1,28 +1,41 @@
 extends CharacterBody2D
 
+@export var upper_floor : Vector2
+@export var base_floor : Vector2 
+@export var decay : float = 0.5
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+var move = 0
+var state = 0
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+func exp_decay(a, b, decay, dt):
+	return b + (a-b)*exp(-decay*dt)
+	
+func move_up(delta, dc):
+	position = exp_decay(position, upper_floor, dc, delta)
 
+func move_down(delta, dc):
+	position = exp_decay(position, base_floor, dc, delta)
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
+	if move == 1 and state == 1:
+		move_up(delta, self.decay)
+	if move == -1 and state == 2:
+		move_down(delta, min(1, 1.75 * self.decay))
+	if move == 1 and state == 3:
+		move_up(delta, min(1, 1.75 * self.decay))
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+func _on_area_2d_body_entered(body):
+	if body.name == "Rana":
+		$Timer.start()
 
-	move_and_slide()
+func _on_timer_timeout():
+	if state == 0:
+		state += 1
+		move = 1
+	if state == 1:
+		state += 1
+		move = -1
+	if state == 2:
+		state += 1
+		move = 1

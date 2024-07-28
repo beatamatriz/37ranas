@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var friction : float = 115
 @export var acc : float = 90
 
+const god = true
+
 #var canmove = true
 var state = 5
 var on_wall = false
@@ -27,23 +29,30 @@ func update_animation():
 	if velocity.y == 0 and is_on_floor():
 		$AnimationTree["parameters/conditions/is_jumping"] = false
 		$AnimationTree["parameters/conditions/is_landing"] = true 
-func fireball():
+func burn():
+	$Fire_Sprite.visible = true
+	$FireAnimationTree["parameters/conditions/is_burning"] = true
 	$AnimationTree["parameters/conditions/is_burned"] = true
+
+func fireball():
 	$AnimationTree["parameters/conditions/is_burning"] = true
 	$Fireball.burn()
 
 func squash():
-	$Sprite2D.scale.y = 0.05
+	$Fire_Sprite.visible = false
+	$AnimationTree["parameters/conditions/is_squashed"] = true
+	$FireAnimationTree["parameters/conditions/is_disabled"] = true
 	$CollisionNormal.set_disabled(true)
 	$CollisionSquashed.set_disabled(false)
 
 func is_direction_flipped(new_direction):
 	return current_direction * new_direction < 0
-	
-func is_wall_sliding():
-	return state >= 2 and (on_wall or is_on_wall()) and Input.is_key_pressed(KEY_C)
+
+func break_leg():
+	$AnimationTree["parameters/conditions/is_leg_broken"] = true
 
 func _ready():
+	$Fire_Sprite.visible = false
 	$CollisionSquashed.set_disabled(true)
 
 func _physics_process(delta):
@@ -57,40 +66,42 @@ func _physics_process(delta):
 		$AnimationTree["parameters/conditions/is_landing"] = false
 		if is_on_floor():
 			velocity.y = jump_velocity
-		if is_wall_sliding() and Input.is_action_pressed("ui_left"):
-			velocity.y = jump_velocity
-			velocity.x = -pushback
-			on_wall = false
-		if is_wall_sliding() and Input.is_action_pressed("ui_right"):
+		if state >= 2 and is_on_wall() and Input.is_action_pressed("ui_left"):
 			velocity.y = jump_velocity
 			velocity.x = pushback
 			on_wall = false
+		if state >= 2 and is_on_wall() and Input.is_action_pressed("ui_right"):
+			velocity.y = jump_velocity
+			velocity.x = -pushback
+			on_wall = false
 			
 	# state 1
-	if state >= 1 and Input.is_key_pressed(KEY_X) and not cooldown:
+	if god and Input.is_key_pressed(KEY_7):
+		self.burn()
+	if (state >= 1 or god) and Input.is_key_pressed(KEY_X) and not cooldown:
 		cooldown = true
 		fireball()
 	else:
 		$AnimationTree["parameters/conditions/is_burning"] = false
 	
 	# state 2
-	if state >= 2 and is_wall_sliding():
-		on_wall = true
-		velocity.y += 0.0005 * gravity * delta
-		velocity.y = max(0, velocity.y)
+
 	
 	#state 3
-	if state == 3 and Input.is_key_pressed(KEY_0):
+	if state == 3 or (god and Input.is_key_pressed(KEY_0)):
 		squash()
 		state += 1
-	if not is_wall_sliding():
-		if direction:
-			velocity.x = direction * speed
-			if is_direction_flipped(velocity.x) or (current_direction == 0 and velocity.x < 0):
-				self.scale.x = -self.scale.x
-			current_direction = velocity.x
-		else:
-			velocity.x = move_toward(velocity.x, 0, speed)
+		
+	if direction:
+		velocity.x = direction * speed
+		if is_direction_flipped(velocity.x) or (current_direction == 0 and velocity.x < 0):
+			self.scale.x = -self.scale.x
+		current_direction = velocity.x
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		
+	if god and Input.is_key_pressed(KEY_1):
+		break_leg()
 	update_animation()
 	move_and_slide()
 
